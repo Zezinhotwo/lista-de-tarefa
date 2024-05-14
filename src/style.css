@@ -1,0 +1,11 @@
+body{
+    background-color: black;
+}
+.hello {
+    font-size: 3em;
+    font-weight: bolder;
+    color: white;
+}
+p > span {
+    color: red;
+}
