@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Execulte</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body class="corpo">
+    <form action="#" class="formulario hide">
+      <label for="nome">Nome</label>
+      <input type="text" name="nome" id="nome">
+    </form>
+    <!-- HEADER -->
+    <header class="cabeca">
+      <nav class="navegacao">
+        <ul class="nav">
+          <span class="item-nav">Adicionar Tarefa</span>
+          <li class="item-nav">Hoje</li>
+          <li class="item-nav">Feitas</li>
+          <li class="item-nav">Em Breve</li>
+        </ul>
+        <ul>
+          <li>Meus projetos</li>
+        </ul>
+      </nav>
+    </header>
+    <!--END HEADER -->
+    <!-- Content -->
+    <section class="content">
+      <h2>Hoje</h2>
+      <div>
+        <p>Meus Projetos</p>
+      </div>
+      <div class="listTask">
+        <!-- <details id="task-container"></details>  -->
+      </div>
+      <button id="addTask">Adicionar Tarefa</button>
+    </section>
+    <!-- END Content -->
+    <!-- ASIDE -->
+    <section class="aside">
+      <h2>Em Breve</h2>
+      <div>
+        <p>Projetos</p>
+      </div>
+      <div>
+        <ul>
+          <li>Tarefas AKI</li>
+        </ul>
+        <button id="addTask2232">Remover Tarefa</button>
+      </div>
+    </section>
+    <!-- END ASIDE -->
+  </body>
 </html>
