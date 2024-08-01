@@ -43,6 +43,7 @@ export function deleteTask(element) {
   }
   
 export function getJSON() {
+  
     return JSON.parse(localStorage.getItem("Tarefas")) || [];
   }
   
