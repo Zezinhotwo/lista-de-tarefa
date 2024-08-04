@@ -2,15 +2,16 @@
 $(document).ready(function () {
   $(".form").on("submit", (event) => {
     event.preventDefault();
-     DomGetData()
+    const listTask = document.querySelector(".listTask");
+    listTask.innerHTML = renderTasks(DomGetData());
     $(".form").hide();
   });
 });
 import { error } from "jquery";
 import Task from "./NewTask.js";
-import { salvaJSON } from "./localStorage.js";
+import { getJSON, salvaJSON, renderTasks } from "./localStorage.js";
 import { addDays, format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { ptBR, ta } from "date-fns/locale";
 
 const diaAtual = new Date();
 
@@ -29,7 +30,7 @@ function getFomr() {
     init: format(diaAtual, "EEEE dd/MM/yyyy", { locale: ptBR }),
     descricao: descricao,
   };
-    return tarefa;
+  return tarefa;
 }
 export default function DomGetData() {
   const tarefa = getFomr();
@@ -40,7 +41,7 @@ export default function DomGetData() {
     tarefa.init,
     tarefa.prazo
   );
-
   salvaJSON(DomJson);
-  return { tarefa };
+  const DomList = getJSON();
+  return DomList;
 }

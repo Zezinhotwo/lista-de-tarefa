@@ -7,38 +7,39 @@
   </head>
   <body class="corpo">
     <form action="#" class="form">
-      <div class="formulario ">
-      <button class="addTask">X</button>
-      <label for="nome">Nome</label>
-      <input type="text" name="nome" id="nome" required/>
+      <div class="formulario">
+        <button class="addTask">X</button>
+        <label for="nome">Nome</label>
+        <input type="text" name="nome" id="nome" required />
 
-      <div>
-        <label>Nível</label>
-        <input type="radio" id="radio1" name="nivel" value="1" required/>
-        <label for="radio1" class="level"></label>
+        <div>
+          <label>Nível</label>
+          <input type="radio" id="radio1" name="nivel" value="1" required />
+          <label for="radio1" class="level"></label>
 
-        <input type="radio" id="radio2" name="nivel" value="2" required/>
-        <label for="radio2" class="level2"></label>
+          <input type="radio" id="radio2" name="nivel" value="2" required />
+          <label for="radio2" class="level2"></label>
 
-        <input type="radio" id="radio3" name="nivel" value="3" required/>
-        <label for="radio3" class="level3"></label>
+          <input type="radio" id="radio3" name="nivel" value="3" required />
+          <label for="radio3" class="level3"></label>
 
-        <input type="radio" id="radio4" name="nivel" value="4" required/>
-        <label for="radio4" class="level4"></label>
+          <input type="radio" id="radio4" name="nivel" value="4" required />
+          <label for="radio4" class="level4"></label>
+        </div>
+        <label for="dias">Prazo (dias)</label>
+        <input type="number" name="prazo" id="dias" required />
+
+        <label for="descricao">Descrição</label>
+        <textarea
+          name="descricao"
+          id="descricao"
+          rows="10"
+          cols="30"
+          placeholder="going to run"
+          required
+        ></textarea>
+        <button>Enviar</button>
       </div>
-      <label for="dias">Prazo (dias)</label>
-      <input type="number" name="prazo" id="dias" required/>
-
-      <label for="descricao">Descrição</label>
-      <textarea
-        name="descricao"
-        id="descricao"
-        rows="10"
-        cols="30"
-        placeholder="going to run" required
-      ></textarea>
-      <button>Enviar</button>
-    </div>
     </form>
 
     <!-- HEADER -->
@@ -51,9 +52,18 @@
           <li class="item-nav">Feitas</li>
           <li class="item-nav">Ontem</li>
         </ul>
+        <br />
+        <br />
         <ul>
           <li>Meus projetos</li>
         </ul>
+        <span
+          ><a
+            href="https://github.com/Zezinhotwo?tab=overview&from=2024-08-01&to=2024-08-01"
+            target="_blank"
+            >&copy;&nbsp;Zezinhotwo</a
+          ></span
+        >
       </nav>
     </header>
     <!--END HEADER -->
