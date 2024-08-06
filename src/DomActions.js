@@ -1,11 +1,12 @@
 import { createDom } from "./DomGetData.js";
-import _ from "lodash";
+import _, { remove } from "lodash";
 // nav
 const listTask = document.querySelector(".listTask");
-import { ontem, allTaks,hoje } from "./NewTask.js";
+import { ontem, allTaks, hoje } from "./NewTask.js";
+import { deleteTaskByIndex, renderTasks } from "./localStorage.js";
+
 $(".nav").on("click", (event) => {
-  if ($(event.target) && $(event.target.classList.contains("item-nav"))) {
-    // alert("clicado " + $(event.target).text());
+  if ($(event.target) && $(event.target).hasClass("item-nav")) {
     switch ($(event.target).text()) {
       case "Adicionar Tarefa":
         $(".form").toggle("fast");
@@ -14,11 +15,8 @@ $(".nav").on("click", (event) => {
         $(".listTask")
           .children()
           .hide("fast", function () {
-            // Após esconder todos os filhos, esvazia o container
             $(".listTask").empty();
-            // Adiciona o valor retornado pela função hoje()
             $(".listTask").append(ontem());
-            // Mostra os novos elementos (opcional)
             $(".listTask").children().show("fast");
           });
         break;
@@ -28,25 +26,31 @@ $(".nav").on("click", (event) => {
           .hide("fast", () => {
             $(".listTask").empty();
             $(".listTask").append(allTaks());
-            $(".listTask").children().show("fast")
+            $(".listTask").children().show("fast");
           });
         break;
-        case "Hoje":
-          $(".listTask")
-            .children()
-            .hide("fast", () => {
-              $(".listTask").empty();
-              $(".listTask").append(hoje());
-              $(".listTask").children().show("fast")
-            });
-          break;
+      case "Hoje":
+        $(".listTask")
+          .children()
+          .hide("fast", () => {
+            $(".listTask").empty();
+            $(".listTask").append(hoje());
+            $(".listTask").children().show("fast");
+          });
+        break;
       default:
         break;
     }
   }
 });
+
 $(".addTask").on("click", (event) => {
-    event.preventDefault();
-    $(".form").toggle("fast");
+  event.preventDefault();
+  $(".form").toggle("fast");
 });
-// END nav
+
+$(document).on("click", ".delete", function (event) {
+  const index = $(this).data("index");
+  deleteTaskByIndex(index);
+  $(this).closest(".task").remove();
+});

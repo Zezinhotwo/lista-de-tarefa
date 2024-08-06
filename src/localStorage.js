@@ -1,57 +1,60 @@
 // tasks.js
 
+
 export function deleteTask(element) {
-    const tasks = JSON.parse(localStorage.getItem("Tarefas")) || [];
-    const updatedTasks = tasks.filter(
-      (task) =>
-        !(
-          task.title === element.title &&
-          task.descricao === element.descricao &&
-          task.level === element.level &&
-          task.InitiDate === element.InitiDate &&
-          task.EndDate === element.EndDate
-        )
-    );
-  
-    if (tasks.length !== updatedTasks.length) {
-      localStorage.setItem("Tarefas", JSON.stringify(updatedTasks));
-      console.log("Tarefa removida com sucesso");
-    } else {
-      console.log("A tarefa não foi encontrada ou já foi removida");
-    }
-  
-    console.log(updatedTasks);
-  }
-  
-  export function salvaJSON(element) {
-    const tasks = JSON.parse(localStorage.getItem("Tarefas")) || [];
-    if (!exists(element, tasks)) {
-      tasks.push(element);
-      localStorage.setItem("Tarefas", JSON.stringify(tasks));
-    }
-  }
-  
-  function exists(element, tasks) {
-    return tasks.some(
-      (task) =>
+  const tasks = JSON.parse(localStorage.getItem("Tarefas")) || [];
+  const updatedTasks = tasks.filter(
+    (task) =>
+      !(
         task.title === element.title &&
         task.descricao === element.descricao &&
         task.level === element.level &&
         task.InitiDate === element.InitiDate &&
         task.EndDate === element.EndDate
-    );
+      )
+  );
+
+  if (tasks.length !== updatedTasks.length) {
+    localStorage.setItem("Tarefas", JSON.stringify(updatedTasks));
+    console.log("Tarefa removida com sucesso");
+  } else {
+    console.log("A tarefa não foi encontrada ou já foi removida");
   }
-  
+
+  console.log(updatedTasks);
+}
+
+export function salvaJSON(element) {
+  const tasks = JSON.parse(localStorage.getItem("Tarefas")) || [];
+  if (!exists(element, tasks)) {
+    tasks.push(element);
+    localStorage.setItem("Tarefas", JSON.stringify(tasks));
+  }
+}
+
+function exists(element, tasks) {
+  return tasks.some(
+    (task) =>
+      task.title === element.title &&
+      task.descricao === element.descricao &&
+      task.level === element.level &&
+      task.InitiDate === element.InitiDate &&
+      task.EndDate === element.EndDate
+  );
+}
+
 export function getJSON() {
-  
-    return JSON.parse(localStorage.getItem("Tarefas")) || [];
-  }
-  
-  export function renderTasks(tasks) {
-    return tasks
-      .map((task) => {
-        return `<details class="task">
-        <summary>${task.title}</summary>
+  return JSON.parse(localStorage.getItem("Tarefas")) || [];
+}
+
+export function renderTasks(tasks) {
+  return tasks
+    .map((task, index) => {
+      return `<details class="task" data-index="${index}">
+        <summary>
+          ${task.title}
+          <button class="delete" data-index="${index}">Delete</button>
+        </summary>
           <div>
               <h2 class="title">${task.title}</h2>
               <p><span>Descrição:</span> ${task.descricao}</p>
@@ -60,9 +63,13 @@ export function getJSON() {
               <p><span>Data de Fim:</span> ${task.EndDate}</p>
           </div>
         </details>`;
-      })
-      .join("");
-  }
-  
+    })
+    .join("");
+}
 
-
+export function deleteTaskByIndex(index) {
+  const tasks = JSON.parse(localStorage.getItem("Tarefas")) || [];
+  const updatedTasks = tasks.filter((task, i) => i !== index);
+  localStorage.setItem("Tarefas", JSON.stringify(updatedTasks));
+  console.log("Tarefa removida com sucesso");
+}
