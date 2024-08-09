@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Execulte</title>
+    <link rel="stylesheet" href="style/style.css" />
   <script defer src="runtimebundle.js"></script><script defer src="mainbundle.js"></script></head>
   <body class="corpo">
-    <form action="#" class="form">
+    <form action="#" class="form hide">
       <div class="formulario">
-        <button class="addTask">X</button>
+        <button type="button" id="addTask" class="addTask">X</button>
         <label for="nome">Nome</label>
         <input type="text" name="nome" id="nome" required />
 
@@ -38,7 +39,7 @@
           placeholder="going to run"
           required
         ></textarea>
-        <button>Enviar</button>
+        <button type="submit">Enviar</button>
       </div>
     </form>
 
@@ -57,16 +58,17 @@
         <ul>
           <li>Meus projetos</li>
         </ul>
-        <span
-          ><a
+        <span>
+          <a
             href="https://github.com/Zezinhotwo?tab=overview&from=2024-08-01&to=2024-08-01"
             target="_blank"
             >&copy;&nbsp;Zezinhotwo</a
-          ></span
-        >
+          >
+        </span>
       </nav>
     </header>
     <!--END HEADER -->
+
     <!-- Content -->
     <section class="content">
       <h2>Hoje</h2>
@@ -79,6 +81,7 @@
       <button class="addTask">Adicionar Tarefa</button>
     </section>
     <!-- END Content -->
+
     <!-- ASIDE -->
     <section class="aside">
       <h2>Em Breve</h2>
@@ -93,5 +96,6 @@
       </div>
     </section>
     <!-- END ASIDE -->
+
   </body>
 </html>

@@ -23,7 +23,7 @@
 }
 .form {
     position: absolute;
-    display: none;
+    // display: none;
     top: 20%;
     left: 35%;
 }
@@ -157,9 +157,10 @@ input[type="radio"]:checked + .level4 {
             margin-top: 0.5em;
             margin-bottom: 0.5em;
             padding: 0.5em;
-            background-color: white;
+            // background-color: white;
             width: 100%;
             border-radius: 10px;
+
             summary {
                 height: 50px;
                 font-family: "Courier New", Courier, monospace;
@@ -179,10 +180,6 @@ input[type="radio"]:checked + .level4 {
                     color: white;
                 }
             }
-            summary::before {
-                content: "\27A4";
-                width: 20px;
-            }
             div {
                 background-color: rgb(235, 235, 231);
                 display: flex;
@@ -194,6 +191,22 @@ input[type="radio"]:checked + .level4 {
                     font-weight: bold;
                 }
             }
+        }
+
+        .level-1 {
+            background-color: #d4edda; /* Verde claro */
+        }
+
+        .level-2 {
+            background-color: #c3e6cb; /* Verde médio */
+        }
+
+        .level-3 {
+            background-color: #ffeeba; /* Amarelo */
+        }
+
+        .level-4 {
+            background-color: #f5c6cb; /* Vermelho claro */
         }
     }
 }

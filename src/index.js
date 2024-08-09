@@ -1,14 +1,9 @@
-import _ from "lodash";
+// index.js
+import { DomActions } from "./domAcoes.js";
+import { FormController } from "./formControle.js";
 import "./style/style.css";
-import "./DomActions.js";
-import "./NewTask.js";
-// import { createDom } from './DomTask.js'
-// import criarTarefa from './addTask.js';
-// import { createDom} from './getDom.js';
 
-// const { tarefaDom } = createDom();
-
-// document.body.appendChild(tarefaDom);
-const hoje = [];
-const feitas = [];
-const embreve = [];
+document.addEventListener("DOMContentLoaded", () => {
+  new DomActions();
+  new FormController();
+});
