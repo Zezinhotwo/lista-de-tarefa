@@ -41,7 +41,7 @@ export class DomActions {
 
     switch (option) {
       case "Adicionar Tarefa":
-        document.querySelector(".form").classList.toggle("hide");
+        document.querySelector(".form").classList.toggle(".hide");
         listTask.innerHTML = renderTasks(getTasks());
         break;
       // case "Ontem":
