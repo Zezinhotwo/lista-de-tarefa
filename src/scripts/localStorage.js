@@ -46,9 +46,9 @@ function pegarCorPerNivel(level) {
     case "1":
       return "#d4edda"; // Verde claro
     case "2":
-      return "#c3e6cb"; // Verde médio
+      return "#fff7a3"; // Amarelo clarro 
     case "3":
-      return "#ffeeba"; // Amarelo
+      return " #ffaa75"; // Laranja claro
     case "4":
       return "#f5c6cb"; // Vermelho claro
     default:
