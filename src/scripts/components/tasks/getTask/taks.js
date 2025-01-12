@@ -1,17 +1,11 @@
-
-export interface Task {
-    title: string;
-    descricao: string;
-    level: number;
-    startDate: string;
-    endDate: string;
-}
-
-export function generateTasksHtml(tasks: Task[]): string {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.generateTasksHtml = generateTasksHtml;
+function generateTasksHtml(tasks) {
     return tasks
         .map((task, index) => {
-            const color = getLevel(task.level);
-            return `
+        const color = getLevel(task.level);
+        return `
           <details class="task" data-index="${index}" style="background-color: ${color}">
             <summary>
               ${task.title}
@@ -27,21 +21,20 @@ export function generateTasksHtml(tasks: Task[]): string {
             </div>
           </details>
         `;
-        })
+    })
         .join("");
 }
-
-function getLevel(level: number): string {
+function getLevel(level) {
     switch (level) {
         case 1:
-            return "#d4edda"; // Verde claro
+            return "#d4edda";
         case 2:
-            return "#fff7a3"; // Amarelo claro
+            return "#fff7a3";
         case 3:
-            return "#ffaa75"; // Laranja claro
+            return "#ffaa75";
         case 4:
-            return "#f5c6cb"; // Vermelho claro
+            return "#f5c6cb";
         default:
-            return "#f8d7da"; // Vermelho escuro (erro)
+            return "#f8d7da";
     }
 }

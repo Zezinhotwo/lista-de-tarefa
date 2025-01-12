@@ -4,7 +4,7 @@ const webpack = require("webpack");
 module.exports = {
   // mode:"production"
   mode: "development",
-  entry: "./src/scripts/index.js",
+  entry: "./src/scripts/main.js",
   devtool: "inline-source-map",
   devServer: {
     static: "./dist",
