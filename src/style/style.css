@@ -119,10 +119,17 @@ input[type=radio]:checked + .level4 {
   flex-direction: column;
 }
 .cabeca .navegacao .nav > span {
-  background-color: #ccc;
-  font: bold 14pt "Courier New", Courier, monospace;
+  display: flex;
+  align-items: center;
+  color: rgb(204, 93, 232);
+  font: normal 14pt "Courier New", Courier, monospace;
+}
+.cabeca .navegacao .nav > span .add-icon {
+  margin-right: 0.5em;
 }
 .cabeca .navegacao .nav > * {
+  display: flex;
+  align-items: center;
   transition: 0.3s;
   margin-top: 0.2em;
   cursor: pointer;
@@ -130,10 +137,16 @@ input[type=radio]:checked + .level4 {
   padding: 1em;
   height: 99%;
   width: 100%;
+  transition: 500ms;
+}
+.cabeca .navegacao .nav > * img {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.5em;
 }
 .cabeca .navegacao .nav > *:hover {
-  background-color: #ccc;
-  color: white;
+  color: rgb(165, 11, 204);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.432);
 }
 
 .content {
