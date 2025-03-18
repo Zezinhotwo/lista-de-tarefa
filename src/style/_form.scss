@@ -1,0 +1,100 @@
+@mixin form {
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+    .form {
+        position: absolute;
+        top: 20%;
+        left: 35%;
+    }
+    .formulario {
+        z-index: 100;
+        position: absolute;
+        top: 20%;
+        left: 35%;
+        height: 30em;
+        width: 30em;
+        padding: 0.5em;
+        border-radius: 10px 0 10px 10px;
+        box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.432);
+        background-color: #f0f8ff;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        gap:.2em;
+        .exit-form {
+            position: relative;
+            top: -1.5%;
+            left: 101.7%;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            width: 50px;
+            background-color: rgb(250, 11, 11);
+            color: white;
+            font-size: 15pt;
+            padding: 0.5em;
+        }
+        .bnt-submit{
+            background-color: #59ff7f;
+            border: none;
+            border-radius: 5px;
+            padding: .5em;
+        }
+    }
+    input[type="text"] {
+        border-radius: 10px;
+        padding: 0.5em;
+    }
+    input[type="number"] {
+        border-radius: 10px;
+        padding: 0.5em;
+        width: 20%;
+    }
+    textarea{
+        border-radius: 10px;
+        
+    }
+
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    /* Estilo padrão para os rótulos dos inputs de rádio */
+    input[type="radio"] + label {
+        display: inline-block;
+        padding: 0.5em;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        cursor: pointer;
+        transition:
+            border-color 0.3s,
+            background-color 0.3s;
+    }
+
+    /* Estilo para o input de rádio quando está marcado */
+
+    input[type="radio"]:checked + .level {
+        border-color: #1e8536;
+        background-color: #59ff7f;
+    }
+    input[type="radio"]:checked + .level2 {
+        border-color: #88822f;
+        background-color: #ffef0a;
+    }
+    input[type="radio"]:checked + .level3 {
+        border-color: #724828;
+        background-color: #ff7408;
+    }
+    input[type="radio"]:checked + .level4 {
+        border-color: #702921;
+        background-color: #ff2208;
+    }
+    #descricao {
+        padding: 0.5em;
+        resize: none;
+    }
+}

@@ -19,11 +19,11 @@ export class DomActions {
       }
     });
 
-    document.querySelector("section .addTask").addEventListener("click", ()=> {
+    document.querySelector("section .addTask").addEventListener("click", () => {
       document.querySelector(".form").classList.remove("hide");
     });
     // ---------------Ocultar Formulario--------------- // 
-    document.querySelector("#addTask").addEventListener("click", (event)=> {
+    document.querySelector("#addTask").addEventListener("click", (event) => {
       event.preventDefault()
       document.querySelector(".form").classList.toggle("hide");
     });
@@ -41,7 +41,6 @@ export class DomActions {
 
     switch (option) {
       case "Adicionar Tarefa":
-        document.querySelector(".form").classList.toggle(".hide");
         listTask.innerHTML = renderTasks(getTasks());
         break;
       // case "Ontem":
@@ -51,6 +50,10 @@ export class DomActions {
       case "All Task":
         listTask.innerHTML = renderTasks(getTasks());
         break;
+      default:
+        listTask.innerHTML = renderTasks(filtraTarefaPelaData(option));
+        break;
+
     }
   }
 

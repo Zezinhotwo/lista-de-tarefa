@@ -1,5 +1,7 @@
 @charset "UTF-8";
 // @use 'displays'
+@import "box-task";
+@import "form";
 * {
     box-sizing: border-box;
     padding: 0;
@@ -17,88 +19,11 @@
     grid-template-rows: 1fr;
     gap: 5em;
 }
-.show {
-    display: block;
-}
-.hide {
-    display: none;
-}
-.form {
-    position: absolute;
-    // display: none;
-    top: 20%;
-    left: 35%;
-}
-.formulario {
-    z-index: 100;
-    position: absolute;
-    top: 20%;
-    left: 35%;
-    height: 30em;
-    width: 30em;
-    padding: 0.1em;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.432);
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    .addTask {
-        top: 0%;
-        left: 0%;
-        border: none;
-        border-radius: 10px;
-        width: 90px;
-        background-color: red;
-        font-size: 15pt;
-        padding: 1em;
-    }
-}
+// Style Form
+@include form;
 
-input[type="radio"] {
-    display: none;
-}
-
-/* Estilo padrão para os rótulos dos inputs de rádio */
-input[type="radio"] + label {
-    display: inline-block;
-    padding: 0.5em;
-    border: 2px solid #ccc;
-    border-radius: 50%;
-    cursor: pointer;
-    transition:
-        border-color 0.3s,
-        background-color 0.3s;
-}
-
-/* Estilo para o input de rádio quando está marcado */
-
-input[type="radio"]:checked + .level {
-    border-color: #1e8536;
-    background-color: #59ff7f;
-}
-input[type="radio"]:checked + .level2 {
-    border-color: #88822f;
-    background-color: #ffef0a;
-}
-input[type="radio"]:checked + .level3 {
-    border-color: #724828;
-    background-color: #ff7408;
-}
-input[type="radio"]:checked + .level4 {
-    border-color: #702921;
-    background-color: #ff2208;
-}
-#descricao {
-    padding: 0.5em;
-    resize: none;
-}
-
-// #radio1 {
-//     background-color: rgb(0, 255, 34);
-// }
 .cabeca {
-    margin-top: 0.5em;
+    margin-top: 1.5em;
     .navegacao {
         margin-right: 0.5em;
         height: 100%;
@@ -141,10 +66,10 @@ input[type="radio"]:checked + .level4 {
                 height: 99%;
                 width: 100%;
                 font:
-                normal 14pt "Courier New",
-                Courier,
-                monospace;
-                img{
+                    normal 14pt "Courier New",
+                    Courier,
+                    monospace;
+                img {
                     width: 30px;
                     height: 30px;
                     margin-right: 0.5em;
@@ -152,14 +77,14 @@ input[type="radio"]:checked + .level4 {
                 transition: 500ms;
             }
             & > *:hover {
-                  color: rgb(165, 11, 204);
-                  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.432);
+                color: rgb(165, 11, 204);
+                box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.432);
             }
         }
     }
 }
 .content {
-    margin-top: 0.5em;
+    margin-top: 1.5em;
     margin-right: 5em;
     margin-bottom: 0.5em;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.432);
@@ -172,63 +97,7 @@ input[type="radio"]:checked + .level4 {
         display: flex;
         align-items: start;
         flex-direction: column;
-        .task {
-            cursor: pointer;
-            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.432);
-            margin-top: 0.5em;
-            margin-bottom: 0.5em;
-            padding: 0.5em;
-            // background-color: white;
-            width: 100%;
-            border-radius: 10px;
-
-            summary {
-                height: 50px;
-                font-family: "Courier New", Courier, monospace;
-                display: flex;
-                // justify-content: center;
-                justify-content: space-between;
-                align-items: center;
-                .delete {
-                    border: none;
-                    border-radius: 5px;
-                    background-color: #ccc;
-                    padding: 0.5em 1.2em;
-                    transition: 0.3s;
-                }
-                .delete:hover {
-                    background-color: #ccc;
-                    color: white;
-                }
-            }
-            div {
-                background-color: rgb(235, 235, 231);
-                display: flex;
-                align-items: start;
-                // justify-content: center;
-                flex-direction: column;
-                & span {
-                    font-family: "Courier New", Courier, monospace;
-                    font-weight: bold;
-                }
-            }
-        }
-
-        .level-1 {
-            background-color: #d4edda; /* Verde claro */
-        }
-
-        .level-2 {
-            background-color: #c3e6cb; /* Verde médio */
-        }
-
-        .level-3 {
-            background-color: #ffeeba; /* Amarelo */
-        }
-
-        .level-4 {
-            background-color: #f5c6cb; /* Vermelho claro */
-        }
+        @include box-task;
     }
 }
 .adicionarTarrefa {

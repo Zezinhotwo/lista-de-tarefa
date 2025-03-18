@@ -24,13 +24,13 @@ export function renderTasks(tasks) {
       return `
         <details class="task" data-index="${index}" style="background-color: ${color}">
           <summary>
-            ${task.title}
+            <span class="title">${task.title}</span>
             <span>${task.endDate}</span>
             <button class="delete" data-index="${index}">Delete</button>
           </summary>
           <div>
             <h2 class="title">${task.title}</h2>
-            <p><span>Descrição:</span> ${task.descricao}</p>
+            <p class = "descricao"><span>Descrição:</span> ${task.descricao}</p>
             <p><span>Nível:</span> ${task.level}</p>
             <p><span>Data de Início:</span> ${task.startDate}</p>
             <p><span>Data de Fim:</span> ${task.endDate}</p>

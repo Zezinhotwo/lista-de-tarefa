@@ -36,23 +36,47 @@
   left: 35%;
   height: 30em;
   width: 30em;
-  padding: 0.1em;
-  border-radius: 10px;
+  padding: 0.5em;
+  border-radius: 10px 0 10px 10px;
   box-shadow: 0px 0px 20px 3px rgba(0, 0, 0, 0.432);
-  background-color: rgb(255, 255, 255);
+  background-color: #f0f8ff;
   display: flex;
   justify-content: start;
   flex-direction: column;
+  gap: 0.2em;
 }
-.formulario .addTask {
-  top: 0%;
-  left: 0%;
+.formulario .exit-form {
+  position: relative;
+  top: -1.5%;
+  left: 101.7%;
   border: none;
-  border-radius: 10px;
-  width: 90px;
-  background-color: red;
+  border-radius: 0 10px 10px 0;
+  width: 50px;
+  background-color: rgb(250, 11, 11);
+  color: white;
   font-size: 15pt;
-  padding: 1em;
+  padding: 0.5em;
+}
+.formulario .bnt-submit {
+  background-color: #59ff7f;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+}
+
+input[type=text] {
+  border-radius: 10px;
+  padding: 0.5em;
+}
+
+input[type=number] {
+  border-radius: 10px;
+  padding: 0.5em;
+  width: 20%;
+}
+
+textarea {
+  border-radius: 10px;
 }
 
 input[type=radio] {
@@ -96,7 +120,7 @@ input[type=radio]:checked + .level4 {
 }
 
 .cabeca {
-  margin-top: 0.5em;
+  margin-top: 1.5em;
 }
 .cabeca .navegacao {
   margin-right: 0.5em;
@@ -150,7 +174,7 @@ input[type=radio]:checked + .level4 {
 }
 
 .content {
-  margin-top: 0.5em;
+  margin-top: 1.5em;
   margin-right: 5em;
   margin-bottom: 0.5em;
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.432);
@@ -192,11 +216,19 @@ input[type=radio]:checked + .level4 {
   background-color: #ccc;
   color: white;
 }
+.content .listTask .task summary .title {
+  background-color: rgb(255, 255, 255);
+  padding: 0.5em;
+  border-radius: 10px 10px 0 0;
+}
 .content .listTask .task div {
-  background-color: rgb(235, 235, 231);
+  background-color: rgb(255, 255, 255);
   display: flex;
   align-items: start;
   flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  border-radius: 0px 0px 20px 20px;
 }
 .content .listTask .task div span {
   font-family: "Courier New", Courier, monospace;

@@ -1,8 +1,9 @@
 // index.js
-import { DomActions } from "./domAcoes.js";
-import { FormController } from "./formControle.js";
-import RenderImgs from "./AddImgs.js";
-import "../style/style.css";
+import '../style/style.css';
+
+import RenderImgs from './AddImgs.js';
+import { DomActions } from './domAcoes.js';
+import { FormController } from './formControle.js';
 
 document.addEventListener("DOMContentLoaded", () => {
   new DomActions();
