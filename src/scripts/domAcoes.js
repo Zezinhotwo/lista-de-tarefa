@@ -50,9 +50,9 @@ export class DomActions {
       case "All Task":
         listTask.innerHTML = renderTasks(getTasks());
         break;
-      default:
-        listTask.innerHTML = renderTasks(filtraTarefaPelaData(option));
-        break;
+      // default:
+        // listTask.innerHTML = renderTasks(filtraTarefaPelaData(option));
+        // break;
 
     }
   }

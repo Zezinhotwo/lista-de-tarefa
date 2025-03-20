@@ -1,5 +1,4 @@
 // localStorage.js
-
 export function gravarTarefas(task) {
   const tasks = JSON.parse(localStorage.getItem("Tarefas")) || [];
   tasks.push(task);
@@ -30,7 +29,9 @@ export function renderTasks(tasks) {
           </summary>
           <div>
             <h2 class="title">${task.title}</h2>
-            <p class = "descricao"><span>Descrição:</span> ${task.descricao}</p>
+            <span class = "descricao">Descrição:
+                <span>${task.descricao}</span>
+            </span>
             <p><span>Nível:</span> ${task.level}</p>
             <p><span>Data de Início:</span> ${task.startDate}</p>
             <p><span>Data de Fim:</span> ${task.endDate}</p>
