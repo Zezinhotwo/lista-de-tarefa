@@ -5,4 +5,5 @@ ACESSE: [https://zezinhotwo.github.io/lista-de-tarefa/dist/](https://zezinhotwo.
 =======
 ACESSE: [https://zezinhotwo.github.io/lista-de-tarefa/dist/](https://zezinhotwo.github.io/lista-de-tarefa/dist/index.html)
 >>>>>>> origin/main
-![image](https://github.com/user-attachments/assets/fda86816-be5d-4cb8-9031-0c4c2f233cba)
+
+![Captura de tela de 2025-03-18 20-36-50](https://github.com/user-attachments/assets/5afcf380-768a-4ce6-b441-21433ad18a8e)
