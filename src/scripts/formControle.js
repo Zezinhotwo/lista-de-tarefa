@@ -22,12 +22,14 @@ export class FormController {
     const nivel = document.querySelector("input[name='nivel']:checked").value;
     const prazo = parseInt(document.querySelector("#dias").value, 10);
     const descricao = document.querySelector("#descricao").value;
+    const isChecked = false;
     const tarefa = new Task(
       nome,
       descricao,
       nivel,
       format(this.diaAtual, "EEEE dd/MM/yyyy", { locale: ptBR }),
       format(addDays(this.diaAtual, prazo), "EEEE dd/MM/yyyy", { locale: ptBR }),
+      isChecked
     );
 
     gravarTarefas(tarefa);

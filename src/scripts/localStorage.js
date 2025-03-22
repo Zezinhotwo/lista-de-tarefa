@@ -23,7 +23,11 @@ export function renderTasks(tasks) {
       return `
         <details class="task" data-index="${index}" style="background-color: ${color}">
           <summary>
-            <span class="title">${task.title}</span>
+          
+            <span class="title">
+              <input type="checkbox" name="" id="" class="checkbox" >
+              ${task.title}
+            </span>
             <span>${task.endDate}</span>
             <button class="delete" data-index="${index}">Delete</button>
           </summary>

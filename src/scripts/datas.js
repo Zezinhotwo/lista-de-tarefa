@@ -11,7 +11,7 @@ export function filtraTarefaPelaData(option) {
   if (option === "Hoje") {
     return tasks.filter(task => task.startDate === diaAtual);
   } else if (option === "Ontem") {
-    return tasks.filter(task => task.startDate === diaOntem);
+    return tasks.filter(task => task.endDate === diaOntem);
   } else {
     return tasks;
   }

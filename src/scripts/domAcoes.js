@@ -1,6 +1,7 @@
 //domActions.js
 import { deletarTarefasPeloIndex, getTasks, renderTasks } from "./localStorage.js";
 import { filtraTarefaPelaData } from "./datas.js";
+import CheckTask from "./check-task.js";
 
 export class DomActions {
   constructor() {
@@ -43,7 +44,10 @@ export class DomActions {
       case "Adicionar Tarefa":
         listTask.innerHTML = renderTasks(getTasks());
         break;
-      // case "Ontem":
+      case "Feitas":
+        const feitas = new CheckTask();
+        listTask.innerHTML = renderTasks(feitas.filterChecked());
+        break;
       case "Hoje":
         listTask.innerHTML = renderTasks(filtraTarefaPelaData(option));
         break;
@@ -51,8 +55,8 @@ export class DomActions {
         listTask.innerHTML = renderTasks(getTasks());
         break;
       // default:
-        // listTask.innerHTML = renderTasks(filtraTarefaPelaData(option));
-        // break;
+      // listTask.innerHTML = renderTasks(filtraTarefaPelaData(option));
+      // break;
 
     }
   }

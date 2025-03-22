@@ -205,16 +205,15 @@ input[type=radio]:checked + .level4 {
   justify-content: space-between;
   align-items: center;
 }
-.content .listTask .task summary .check-title {
-  height: 50px;
-  border-radius: 10px 10px 0 0;
+.content .listTask .task summary .title {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 1em;
 }
-.content .listTask .task summary .check-title .check {
-  width: 1.5em;
-  height: 1.5em;
+.content .listTask .task summary .title input[type=checkbox] {
+  height: 1em;
+  width: 1em;
 }
 .content .listTask .task summary .delete {
   border: none;
